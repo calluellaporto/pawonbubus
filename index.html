@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawon Bubu - Homemade Cookies And Siomay</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#fdf8f2;
+    color:#5a4636;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(rgba(90,70,54,0.7), rgba(90,70,54,0.7)), 
+    url(pawonbubu.jpeg);
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:4px solid white;
+    margin-bottom:15px;
+}
+
+/* NAV */
+nav{
+    background:#e6d5c3;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#5a4636;
+    font-weight:600;
+}
+
+/* SECTION */
+.section{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+/* ABOUT */
+.about{
+    background:#fff3e6;
+    border-radius:20px;
+    padding:40px;
+}
+
+/* PRODUCT GRID */
+.produk-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    width:260px;
+    padding:15px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    border-radius:15px;
+}
+
+.harga{
+    color:#b85c38;
+    font-weight:bold;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    left:0;top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+    background:white;
+    margin:8% auto;
+    padding:30px;
+    width:90%;
+    max-width:500px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.modal-content img{
+    width:100%;
+    border-radius:15px;
+}
+
+.close{
+    float:right;
+    font-size:22px;
+    cursor:pointer;
+}
+
+button{
+    background:#b85c38;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    margin-top:10px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#8d3f25;
+}
+
+/* FOOTER */
+footer{
+    background:#5a4636;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer a{
+    color:#ffd9b3;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="palmcheese.jpeg" class="logo">
+<h1>Pawon Bubu</h1>
+<p>Homemade siomay dan aneka kue kering, purely from home 🤎</p>
+</header>
+
+<nav>
+<a href="#about">Tentang Kami</a>
+<a href="#produk">Produk</a>
+<a href="#kontak">Kontak</a>
+</nav>
+
+<section class="section" id="about">
+<div class="about">
+<h2>Tentang Kami</h2>
+<p>
+Pawon Bubu adalah usaha rumahan milik seorang ibu yang menjual aneka ragam kue kering dan siomay  🤎
+</p>
+</div>
+</section>
+
+<section class="section" id="produk">
+<h2>Produk Homemade Kami</h2>
+
+<div class="produk-grid">
+
+<div class="card" onclick="openModal('Kaastengel Premium','Kue keju renyah dengan taburan keju melimpah. Dibuat fresh dari oven rumahan setiap hari.','Rp. 135.000 - 350gr')">
+<img src="kastengel.jpeg">
+<h3>Kaastengel Premium</h3>
+
+<p class="harga">Rp 135.000 - 350gr</p>
+</div>
+
+<div class="card" onclick="openModal('Nastar Lumer','Siomay lezat full isi daging','Rp 25.000 - Isi 5')">
+<img src="soapsaji.jpeg">
+<h3>Siomay Siap Saji</h3>
+<p class="harga">Rp 25.000 - Isi 5</p>
+</div>
+
+<div class="card" onclick="openModal('Putri Salju','Kue klasik dengan tingkat kemanisan yang pas','Rp 95.000 - 350gr')">
+<img src="putrsalju.jpeg">
+<h3>Putri Salju</h3>
+<p class="harga">Rp 95.000 - 350gr</p>
+</div>
+
+<div class="card" onclick="openModal('Kastangel Pedas','Kombinasi antara pudding dan cendol yang cocok untuk dicemil','Rp 35.000')">
+<img src="pudding.jpeg">
+<h3>Pudding Cendol</h3>
+<p class="harga">Rp 35.000</p>
+</div>
+
+<div class="card" onclick="openModal('Lidah Kucing','Kue dengan keju yang legit','Rp 95.000 - 350gr')">
+<img src="palmcheese.jpeg">
+<h3>Palm Cheese</h3>
+<p class="harga">Rp 95.000 - 350gr</p>
+</div>
+
+<div class="card" onclick="openModal('Choco Cookies','Siomay frozen cocok sebagai stock makan','Rp 40.00 - Isi 10 + Bumbu')">
+<img src="frozen.jpeg">
+<h3>Siomay Frozen</h3>
+<p class="harga">Rp 40.000 - Isi 10 + Bumbu</p>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div id="myModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<h2 id="modalTitle"></h2>
+<img id="modalImg">
+<p id="modalDesc"></p>
+<p class="harga" id="modalPrice"></p>
+<button onclick="window.open('https://wa.me/62818167900')">Pesan via WhatsApp</button>
+<br>
+<button onclick="window.open('https://instagram.com/pawonbubu')">Kunjungi Instagram</button>
+</div>
+</div>
+
+<footer id="kontak">
+<p>📍 Jl Dempo I No 26</p>
+<p>📱 0818167900</p>
+<p>Instagram: <a href="https://instagram.com/pawonbubu" target="_blank">@pawonbubu</a></p>
+<p>© 2026 Pawon Bubu | Dibuat oleh: Calluella Azalia</p>
+</footer>
+
+<script>
+function openModal(title, desc, price, img){
+document.getElementById("myModal").style.display="block";
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalDesc").innerText=desc;
+document.getElementById("modalPrice").innerText=price;
+document.getElementById("modalImg").src=img;
+}
+function closeModal(){
+document.getElementById("myModal").style.display="none";
+}
+window.onclick=function(e){
+if(e.target==document.getElementById("myModal")){
+closeModal();
+}
+}
+</script>
+
+</body>
+</html>
